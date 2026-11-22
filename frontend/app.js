@@ -2,6 +2,9 @@
 const TOKEN_KEY = "fr_token";
 const $ = (id) => document.getElementById(id);
 const VIEWS = ["home", "donations", "login", "register", "dashboard", "impact", "safety", "admin"];
+// Homepage in-page sections. Hashes for these show the home view and scroll to the section.
+// "impact" and "safety" are NOT listed here: they stay existing view routes.
+const SECTION_IDS = ["about", "how-it-works", "mission", "food-donation", "food-receivers", "contact"];
 const state = { user: null, zones: {}, safety: null, donations: [], claimed: [] };
 
 // Build an element. Strings become text nodes; null/false/undefined children and attributes are skipped.
@@ -90,8 +93,17 @@ function closeNav() {
   $("nav-toggle").setAttribute("aria-expanded", "false");
 }
 
+function scrollToSection(id) {
+  const el = $(id);
+  if (!el) return;
+  const reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  el.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
+}
+
 function route() {
-  let name = location.hash.slice(1);
+  const hash = location.hash.slice(1);
+  const isSection = SECTION_IDS.includes(hash);
+  let name = isSection ? "home" : hash;
   if (!VIEWS.includes(name)) name = "home";
   document.querySelectorAll(".view").forEach((v) => { v.hidden = v.dataset.view !== name; });
   document.querySelectorAll("[data-link]").forEach((a) => a.classList.toggle("active", a.dataset.link === name));
@@ -101,6 +113,7 @@ function route() {
     safety: loadSafety, admin: loadAdmin,
   };
   if (loaders[name]) loaders[name]();
+  if (isSection) scrollToSection(hash);
 }
 
 // ---- Meta: zones and safety ----
@@ -398,6 +411,10 @@ function bindEvents() {
   $("nav-toggle").addEventListener("click", () => {
     const open = $("nav-links").classList.toggle("open");
     $("nav-toggle").setAttribute("aria-expanded", String(open));
+  });
+  // Close the mobile menu after any link click (same-hash clicks fire no hashchange).
+  $("nav-links").addEventListener("click", (e) => {
+    if (e.target.closest("a")) closeNav();
   });
   $("login-form").addEventListener("submit", onLogin);
   $("register-form").addEventListener("submit", onRegister);

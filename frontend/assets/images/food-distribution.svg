@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400" role="img" aria-labelledby="distribution-title">
+  <title id="distribution-title">Food pantry table with grocery bags handed to two people</title>
+  <rect width="600" height="400" fill="#F1F8E9"/>
+  <!-- pantry table -->
+  <rect x="180" y="240" width="240" height="18" rx="4" fill="#8D6E63"/>
+  <rect x="195" y="258" width="12" height="100" fill="#6D4C41"/>
+  <rect x="393" y="258" width="12" height="100" fill="#6D4C41"/>
+  <!-- grocery bags -->
+  <rect x="200" y="186" width="50" height="54" rx="4" fill="#D7A86E"/>
+  <path d="M212 186 C212 166 238 166 238 186" stroke="#B9844A" stroke-width="4" fill="none"/>
+  <rect x="330" y="190" width="50" height="50" rx="4" fill="#F59E0B"/>
+  <path d="M342 190 C342 170 368 170 368 190" stroke="#D97706" stroke-width="4" fill="none"/>
+  <circle cx="355" cy="212" r="8" fill="#43A047"/>
+  <!-- left person -->
+  <circle cx="90" cy="150" r="30" fill="#F2C49B"/>
+  <path d="M60 140 C60 118 120 118 120 140 C112 128 68 128 60 140 Z" fill="#5D4037"/>
+  <rect x="50" y="184" width="80" height="120" rx="20" fill="#2E7D32"/>
+  <rect x="100" y="200" width="60" height="22" rx="8" fill="#F2C49B"/>
+  <rect x="150" y="196" width="0" height="0" fill="none"/>
+  <rect x="50" y="300" width="30" height="70" rx="8" fill="#37474F"/>
+  <rect x="100" y="300" width="30" height="70" rx="8" fill="#37474F"/>
+  <!-- right person -->
+  <circle cx="510" cy="150" r="30" fill="#E0A97E"/>
+  <path d="M480 146 C480 118 540 118 540 146 C530 132 490 132 480 146 Z" fill="#3E2723"/>
+  <rect x="470" y="184" width="80" height="120" rx="20" fill="#F59E0B"/>
+  <rect x="440" y="200" width="40" height="22" rx="8" fill="#E0A97E"/>
+  <rect x="470" y="300" width="30" height="70" rx="8" fill="#37474F"/>
+  <rect x="520" y="300" width="30" height="70" rx="8" fill="#37474F"/>
+  <!-- handover arrow -->
+  <path d="M300 205 H400" stroke="#2E7D32" stroke-width="5" stroke-dasharray="6 8" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400" role="img" aria-labelledby="donation-title">
+  <title id="donation-title">Donation crate filled with food, with an arrow pointing in</title>
+  <rect width="600" height="400" fill="#E8F5E9"/>
+  <ellipse cx="300" cy="360" rx="220" ry="14" fill="#C8E6C9"/>
+  <!-- food items -->
+  <circle cx="230" cy="220" r="26" fill="#E53935"/>
+  <circle cx="300" cy="212" r="26" fill="#EF5350"/>
+  <circle cx="370" cy="220" r="26" fill="#E53935"/>
+  <rect x="200" y="236" width="80" height="34" rx="14" fill="#D7A86E"/>
+  <rect x="300" y="236" width="80" height="34" rx="14" fill="#C68B4E"/>
+  <rect x="236" y="196" width="26" height="36" rx="5" fill="#F59E0B"/>
+  <rect x="340" y="196" width="26" height="36" rx="5" fill="#9E9E9E"/>
+  <!-- crate -->
+  <rect x="170" y="250" width="260" height="120" rx="8" fill="#A1887F"/>
+  <rect x="170" y="250" width="260" height="16" rx="6" fill="#8D6E63"/>
+  <path d="M190 280 H410 M190 310 H410" stroke="#8D6E63" stroke-width="6"/>
+  <rect x="150" y="262" width="20" height="108" rx="6" fill="#6D4C41"/>
+  <rect x="430" y="262" width="20" height="108" rx="6" fill="#6D4C41"/>
+  <!-- arrow pointing in -->
+  <path d="M300 40 V150" stroke="#F59E0B" stroke-width="18" stroke-linecap="round"/>
+  <path d="M262 130 L300 180 L338 130 Z" fill="#F59E0B"/>
+  <path d="M120 80 C160 60 180 60 220 80" stroke="#2E7D32" stroke-width="5" fill="none" stroke-dasharray="2 10" stroke-linecap="round"/>
+</svg>

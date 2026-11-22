@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400" role="img" aria-labelledby="volunteers-title">
+  <title id="volunteers-title">Three volunteers in green and amber t-shirts holding a food basket</title>
+  <rect width="600" height="400" fill="#E8F5E9"/>
+  <ellipse cx="300" cy="380" rx="260" ry="12" fill="#C8E6C9"/>
+  <!-- left volunteer (green) -->
+  <circle cx="130" cy="110" r="36" fill="#F2C49B"/>
+  <path d="M96 100 C96 70 164 70 164 100 C150 88 110 88 96 100 Z" fill="#5D4037"/>
+  <path d="M80 160 H180 L190 270 H70 Z" fill="#2E7D32"/>
+  <rect x="78" y="268" width="32" height="110" rx="8" fill="#37474F"/>
+  <rect x="142" y="268" width="32" height="110" rx="8" fill="#37474F"/>
+  <!-- centre volunteer (amber) -->
+  <circle cx="300" cy="90" r="38" fill="#E0A97E"/>
+  <path d="M262 84 C262 50 338 50 338 84 C326 68 274 68 262 84 Z" fill="#3E2723"/>
+  <path d="M250 144 H350 L360 260 H240 Z" fill="#F59E0B"/>
+  <rect x="248" y="258" width="32" height="120" rx="8" fill="#37474F"/>
+  <rect x="320" y="258" width="32" height="120" rx="8" fill="#37474F"/>
+  <!-- right volunteer (green) -->
+  <circle cx="470" cy="110" r="36" fill="#F2C49B"/>
+  <path d="M436 100 C436 70 504 70 504 100 C490 88 450 88 436 100 Z" fill="#8D6E63"/>
+  <path d="M420 160 H520 L530 270 H410 Z" fill="#43A047"/>
+  <rect x="418" y="268" width="32" height="110" rx="8" fill="#37474F"/>
+  <rect x="482" y="268" width="32" height="110" rx="8" fill="#37474F"/>
+  <!-- food basket held by all -->
+  <path d="M215 250 H385 L365 335 H235 Z" fill="#A1887F"/>
+  <path d="M215 250 H385" stroke="#6D4C41" stroke-width="6"/>
+  <circle cx="265" cy="240" r="18" fill="#E53935"/>
+  <circle cx="300" cy="232" r="18" fill="#EF5350"/>
+  <circle cx="335" cy="240" r="18" fill="#E53935"/>
+  <rect x="250" y="262" width="34" height="22" rx="6" fill="#D7A86E"/>
+  <rect x="302" y="262" width="34" height="22" rx="6" fill="#F59E0B"/>
+</svg>

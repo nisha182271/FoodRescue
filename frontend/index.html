@@ -10,21 +10,20 @@
   <header class="topbar">
     <div class="container nav-row">
       <a href="#home" class="brand">
-        <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M4 20C4 11 10 5 20 4c0 10-6 16-15 16z" fill="#15803d"/>
-          <path d="M4 20l9-9" stroke="#f0fdf4" stroke-width="1.5" fill="none"/>
-        </svg>
-        FoodRescue
+        <img src="assets/images/logo.svg" alt="FoodRescue logo" width="40" height="40">
+        <span class="brand-name">FoodRescue</span>
       </a>
-      <button id="nav-toggle" class="hamburger" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links">
+      <button id="nav-toggle" class="hamburger nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-links">
         <span></span><span></span><span></span>
       </button>
       <nav id="nav-links" class="nav-links" aria-label="Main">
         <a href="#home" data-link="home">Home</a>
+        <a href="#about">About</a>
+        <a href="#how-it-works">How It Works</a>
         <a href="#donations" data-link="donations">Donations</a>
-        <a href="#dashboard" data-link="dashboard">Dashboard</a>
+        <a href="#donations">Find Food</a>
         <a href="#impact" data-link="impact">Impact</a>
-        <a href="#safety" data-link="safety">Safety</a>
+        <a href="#contact">Contact</a>
       </nav>
       <div class="auth-area">
         <a href="#login" class="btn btn-primary btn-sm" id="btn-login-link">Login</a>
@@ -44,31 +43,105 @@
             <h1>Rescue good food. Feed people who need it.</h1>
             <p class="lead">FoodRescue connects donors with surplus food to receivers in their zone, so meals reach people before they are wasted.</p>
             <div class="hero-actions">
-              <a href="#donations" class="btn btn-primary">Browse donations</a>
-              <a href="#register" class="btn btn-light">Join FoodRescue</a>
+              <a href="#register" class="btn btn-primary">Donate Food</a>
+              <a href="#donations" class="btn btn-light">Find Food</a>
             </div>
           </div>
-          <svg class="hero-art" viewBox="0 0 240 200" aria-hidden="true">
-            <ellipse cx="120" cy="170" rx="95" ry="12" fill="#14532d" opacity="0.25"/>
-            <path d="M30 110h180c0 42-40 66-90 66S30 152 30 110z" fill="#ffffff"/>
-            <path d="M30 110h180" stroke="#15803d" stroke-width="6"/>
-            <circle cx="80" cy="82" r="22" fill="#86efac"/>
-            <circle cx="120" cy="70" r="26" fill="#f97316"/>
-            <circle cx="160" cy="84" r="20" fill="#fde68a"/>
-            <path d="M120 44c-8-14 2-22 12-18-2 10-4 14-12 18z" fill="#15803d"/>
-            <path d="M60 60c-6-10 2-16 10-12-2 8-4 10-10 12z" fill="#15803d"/>
-          </svg>
+          <img class="hero-art" src="assets/images/hero-food.svg" alt="Fresh vegetables and bread on a table" width="800" height="600">
         </div>
       </div>
-      <div class="container section">
+
+      <!-- ABOUT -->
+      <section id="about" class="container section">
+        <div class="split">
+          <div>
+            <h2>About FoodRescue</h2>
+            <p>FoodRescue is a food donation platform that links people with surplus food to the charities, shelters and community groups that can put it to good use.</p>
+            <p>Donors post what they have, receivers see what is available nearby, and every collection is tracked from listing to handover.</p>
+          </div>
+          <img class="feature-img" src="assets/images/volunteers.svg" alt="Volunteers packing food boxes" width="600" height="400">
+        </div>
+      </section>
+
+      <!-- HOW IT WORKS -->
+      <section id="how-it-works" class="container section">
         <h2>How it works</h2>
-        <div class="grid-cards">
-          <div class="card"><h3>1. Donate</h3><p>Donors post surplus food with pickup windows and storage details.</p></div>
-          <div class="card"><h3>2. Match</h3><p>Receivers see scored matches based on zone, category and capacity.</p></div>
-          <div class="card"><h3>3. Deliver</h3><p>Claimed food is tracked through collection and delivery.</p></div>
+        <ol class="steps">
+          <li class="card"><span class="step-no">1</span><h3>Donate</h3><p>Donors post surplus food with pickup windows and storage details.</p></li>
+          <li class="card"><span class="step-no">2</span><h3>Match</h3><p>Receivers see scored matches based on zone, category and capacity.</p></li>
+          <li class="card"><span class="step-no">3</span><h3>Collect</h3><p>Receivers claim food and arrange collection within the pickup window.</p></li>
+          <li class="card"><span class="step-no">4</span><h3>Deliver</h3><p>Claimed food is tracked through collection and delivery.</p></li>
+        </ol>
+      </section>
+
+      <!-- MISSION -->
+      <section id="mission" class="section mission">
+        <div class="container">
+          <h2>Our Mission</h2>
+          <p class="lead">Less good food wasted, and more people fed with dignity.</p>
         </div>
-      </div>
+      </section>
+
+      <!-- FOOD DONATION -->
+      <section id="food-donation" class="container section">
+        <div class="split">
+          <img class="feature-img" src="assets/images/food-donation.svg" alt="Donation crate filled with food" width="600" height="400">
+          <div>
+            <h2>Donate food</h2>
+            <p>Suitable donations include surplus cooked meals, fresh produce, bakery items and sealed packaged goods that are still within date.</p>
+            <p>Always record storage type and allergens accurately. Read our <a href="#safety">food safety guidance</a> before posting a donation.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- FOOD RECEIVERS -->
+      <section id="food-receivers" class="container section">
+        <div class="split">
+          <div>
+            <h2>Find food</h2>
+            <p>FoodRescue supports registered charities, shelters and community groups that help people in need.</p>
+            <ul class="plain-list">
+              <li>Charities and food banks</li>
+              <li>Shelters and outreach services</li>
+              <li>Community groups and pantries</li>
+            </ul>
+            <a href="#donations" class="btn btn-primary">Find Food</a>
+          </div>
+          <img class="feature-img" src="assets/images/food-distribution.svg" alt="Food being handed out at a pantry" width="600" height="400">
+        </div>
+      </section>
+
+      <!-- IMPACT -->
+      <section id="impact" class="container section">
+        <h2>Our impact</h2>
+        <div class="split">
+          <div class="stat-grid">
+            <div class="card"><strong>[00]</strong><span>Meals rescued (Placeholder — replace with real figures)</span></div>
+            <div class="card"><strong>[00]</strong><span>Kilograms diverted (Placeholder — replace with real figures)</span></div>
+            <div class="card"><strong>[00]</strong><span>Partner receivers (Placeholder — replace with real figures)</span></div>
+          </div>
+          <img class="feature-img" src="assets/images/community.svg" alt="Community buildings with a sun and heart" width="600" height="400">
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="container section">
+        <h2>Contact Us</h2>
+        <!-- EDITABLE PLACEHOLDERS: replace these values -->
+        <ul class="plain-list contact-list">
+          <li><strong>Email:</strong> <a href="#">[EMAIL — replace with your address]</a> <!-- EDITABLE PLACEHOLDER --></li>
+          <li><strong>Phone:</strong> <span>[PHONE — replace with your number]</span> <!-- EDITABLE PLACEHOLDER --></li>
+          <li><strong>Address:</strong> <span>[ADDRESS — replace with your address]</span> <!-- EDITABLE PLACEHOLDER --></li>
+        </ul>
+        <ul class="plain-list social-list">
+          <li><strong>Facebook:</strong> <a href="#">[replace]</a> <!-- EDITABLE PLACEHOLDER --></li>
+          <li><strong>Instagram:</strong> <a href="#">[replace]</a> <!-- EDITABLE PLACEHOLDER --></li>
+          <li><strong>X:</strong> <a href="#">[replace]</a> <!-- EDITABLE PLACEHOLDER --></li>
+          <li><strong>LinkedIn:</strong> <a href="#">[replace]</a> <!-- EDITABLE PLACEHOLDER --></li>
+        </ul>
+      </section>
     </section>
+
 
     <!-- DONATIONS -->
     <section id="view-donations" class="view container section" data-view="donations" hidden>
@@ -189,9 +262,21 @@
 
   <footer class="footer">
     <div class="container">
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#donations">Donations</a>
+        <a href="#impact">Impact</a>
+        <a href="#safety">Safety</a>
+        <a href="#contact">Contact</a>
+        <a href="#login">Login</a>
+        <a href="#register">Register</a>
+      </nav>
       <p id="disclaimer">FoodRescue · Always check food safety guidance before eating donated food.</p>
     </div>
   </footer>
+
 
   <script src="app.js"></script>
 </body>

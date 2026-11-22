@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400" role="img" aria-labelledby="community-title">
+  <title id="community-title">Row of community houses under a sun with a heart</title>
+  <rect width="600" height="400" fill="#F1F8E9"/>
+  <!-- sun -->
+  <circle cx="500" cy="90" r="40" fill="#F59E0B"/>
+  <path d="M500 26 V8 M500 154 V172 M436 90 H418 M564 90 H582 M449 39 L437 27 M551 141 L563 153 M551 39 L563 27 M449 141 L437 153" stroke="#F59E0B" stroke-width="6" stroke-linecap="round"/>
+  <!-- heart -->
+  <path d="M300 110 C280 90 270 80 270 68 C270 56 280 48 290 48 C296 48 300 52 300 56 C300 52 304 48 310 48 C320 48 330 56 330 68 C330 80 320 90 300 110 Z" fill="#43A047"/>
+  <!-- houses -->
+  <rect x="60" y="200" width="100" height="130" fill="#A5D6A7"/>
+  <path d="M50 205 L110 150 L170 205 Z" fill="#2E7D32"/>
+  <rect x="95" y="270" width="30" height="60" fill="#6D4C41"/>
+  <rect x="200" y="180" width="110" height="150" fill="#F59E0B"/>
+  <path d="M190 185 L255 120 L320 185 Z" fill="#2E7D32"/>
+  <rect x="240" y="260" width="34" height="70" fill="#6D4C41"/>
+  <rect x="222" y="210" width="30" height="30" fill="#FFF8E1"/>
+  <rect x="268" y="210" width="30" height="30" fill="#FFF8E1"/>
+  <rect x="340" y="220" width="90" height="110" fill="#81C784"/>
+  <path d="M330 225 L385 175 L440 225 Z" fill="#1B5E20"/>
+  <rect x="368" y="280" width="28" height="50" fill="#6D4C41"/>
+  <rect x="455" y="200" width="100" height="130" fill="#A5D6A7"/>
+  <path d="M445 205 L505 150 L565 205 Z" fill="#2E7D32"/>
+  <rect x="490" y="270" width="30" height="60" fill="#6D4C41"/>
+  <!-- ground -->
+  <rect y="330" width="600" height="70" fill="#C8E6C9"/>
+</svg>

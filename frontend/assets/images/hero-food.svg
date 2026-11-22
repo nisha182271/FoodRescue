@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-labelledby="hero-title">
+  <title id="hero-title">Fresh vegetables, fruit and bread on a wooden table</title>
+  <rect width="800" height="600" fill="#F1F8E9"/>
+  <rect y="0" width="800" height="330" fill="#FFF8E1"/>
+  <circle cx="650" cy="110" r="60" fill="#F59E0B" opacity="0.35"/>
+  <rect y="400" width="800" height="200" fill="#8D6E63"/>
+  <rect y="390" width="800" height="26" rx="6" fill="#A1887F"/>
+  <!-- bread loaf -->
+  <path d="M470 330 C470 290 530 280 570 290 C610 300 615 340 600 360 L470 360 Z" fill="#D7A86E"/>
+  <path d="M500 300 L505 330 M530 292 L535 330 M560 294 L565 330" stroke="#B9844A" stroke-width="5" stroke-linecap="round"/>
+  <!-- apple -->
+  <circle cx="650" cy="350" r="42" fill="#E53935"/>
+  <path d="M650 308 C652 296 658 290 668 288" stroke="#5D4037" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <path d="M658 298 C668 282 684 284 690 290 C680 302 668 302 658 298 Z" fill="#43A047"/>
+  <!-- tomatoes -->
+  <circle cx="190" cy="360" r="46" fill="#E53935"/>
+  <circle cx="265" cy="372" r="36" fill="#EF5350"/>
+  <path d="M190 316 L182 308 L196 310 L204 302 L198 318 Z" fill="#2E7D32"/>
+  <!-- carrots -->
+  <path d="M320 380 L390 350 L398 362 L328 392 Z" fill="#FB8C00"/>
+  <path d="M378 352 L372 330 L386 336 L392 318 L398 350 Z" fill="#43A047"/>
+  <path d="M100 392 L160 368 L166 380 L106 404 Z" fill="#FB8C00"/>
+  <path d="M154 370 L150 348 L162 356 L170 340 L170 368 Z" fill="#43A047"/>
+  <!-- leafy greens -->
+  <ellipse cx="90" cy="330" rx="42" ry="24" fill="#66BB6A" transform="rotate(-20 90 330)"/>
+  <ellipse cx="130" cy="326" rx="40" ry="22" fill="#2E7D32" transform="rotate(15 130 326)"/>
+  <ellipse cx="720" cy="330" rx="36" ry="20" fill="#81C784" transform="rotate(25 720 330)"/>
+  <!-- amber accent plate -->
+  <ellipse cx="400" cy="402" rx="120" ry="14" fill="#F59E0B"/>
+</svg>

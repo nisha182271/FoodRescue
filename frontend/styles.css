@@ -135,3 +135,259 @@ th { background: var(--light); color: var(--dark); }
   .form-grid { grid-template-columns: 1fr 1fr 1fr; }
   .grid-cards { gap: 1.25rem; }
 }
+
+/* ===== Homepage redesign additions ===== */
+
+:root {
+  --green: #2E7D32;
+  --green-light: #43A047;
+  --cream: #FAFAF5;
+  --white: #FFFFFF;
+  --amber: #F59E0B;
+  --ink: #1F2933;
+}
+
+/* Images stay inside their container */
+img, svg, picture, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Sticky header (applies to .site-header and the existing top navigation container) */
+.site-header,
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--white);
+  box-shadow: var(--shadow);
+}
+
+/* Hamburger toggle: visible below 768px, hidden on desktop */
+.nav-toggle {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-left: auto;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.4rem 0.5rem;
+  cursor: pointer;
+}
+.nav-toggle span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: var(--green);
+}
+
+/* Hero: single column by default, two columns from 768px */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  align-items: center;
+  padding: 2.5rem 0;
+}
+
+/* Section card grid */
+.section-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+.section-grid .card {
+  height: 100%;
+}
+
+/* Numbered steps list */
+.steps {
+  list-style: none;
+  counter-reset: step;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1rem;
+}
+.steps > li {
+  counter-increment: step;
+  position: relative;
+  padding: 1rem 1rem 1rem 3.4rem;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.steps > li::before {
+  content: counter(step);
+  position: absolute;
+  left: 0.9rem;
+  top: 0.9rem;
+  width: 1.9rem;
+  height: 1.9rem;
+  border-radius: 50%;
+  background: var(--green-light);
+  color: var(--white);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Contact block */
+.contact-block {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--amber);
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+  box-shadow: var(--shadow);
+}
+.contact-block p { margin: 0.25rem 0; }
+
+/* Footer link grid */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+.footer-grid a {
+  color: #dcfce7;
+  text-decoration: none;
+}
+.footer-grid a:hover { text-decoration: underline; }
+.footer-links {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.4rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Small phones and up */
+@media (min-width: 640px) {
+  .section-grid { grid-template-columns: repeat(2, 1fr); }
+  .footer-links { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Tablet and up: two-column hero, hamburger hidden */
+@media (min-width: 768px) {
+  .nav-toggle { display: none; }
+  .hero { grid-template-columns: 1fr 1fr; padding: 3rem 0; }
+  .footer-grid { grid-template-columns: 2fr 1fr 1fr; }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .section-grid { grid-template-columns: repeat(3, 1fr); }
+  .hero { grid-template-columns: 1.2fr 1fr; }
+  .footer-links { grid-template-columns: repeat(3, 1fr); }
+}
+
+
+/* ===== Layout helpers for homepage sections ===== */
+
+/* Two-column split: one column below 768px */
+.split {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .split { grid-template-columns: 1fr 1fr; }
+}
+
+/* Step number badge inside numbered step cards */
+.step-no {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: var(--green-light);
+  color: var(--white);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+/* Responsive feature images */
+.feature-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+}
+
+/* Centred mission band */
+.mission {
+  background: var(--green);
+  color: var(--white);
+  text-align: center;
+  padding: 2.5rem 1rem;
+}
+.mission h2,
+.mission h3 { color: var(--white); }
+.mission p {
+  max-width: 720px;
+  margin: 0.5rem auto 0;
+}
+
+/* Contact details: list without bullets, spaced */
+.contact-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.6rem;
+}
+
+/* Social links as pill buttons */
+.social-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.social-list a {
+  display: inline-block;
+  padding: 0.35rem 0.9rem;
+  border: 1px solid var(--green-light);
+  border-radius: 999px;
+  color: var(--green);
+  text-decoration: none;
+  font-weight: 600;
+  background: var(--white);
+}
+.social-list a:hover {
+  background: var(--green);
+  color: var(--white);
+}
+
+/* Footer link row */
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.footer-nav a {
+  color: #dcfce7;
+  text-decoration: none;
+}
+.footer-nav a:hover { text-decoration: underline; }
+
+/* Wordmark next to the logo */
+.brand-name {
+  font-weight: 700;
+  color: var(--green);
+}
+
