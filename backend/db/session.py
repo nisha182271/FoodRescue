@@ -1,3 +1,4 @@
+
 """SQLAlchemy engine, session factory and database initialisation."""
 
 from collections.abc import Generator
@@ -14,7 +15,10 @@ class Base(DeclarativeBase):
     pass
 
 
-engine = create_engine(DATABASE_URL, connect_args={"check_same_thread": False})
+engine = create_engine(
+    DATABASE_URL,
+    connect_args={"check_same_thread": False},
+)
 
 
 @event.listens_for(engine, "connect")
@@ -25,7 +29,11 @@ def _set_sqlite_pragmas(dbapi_connection, connection_record) -> None:
     cursor.close()
 
 
-SessionLocal = sessionmaker(bind=engine, autoflush=False, expire_on_commit=False)
+SessionLocal = sessionmaker(
+    bind=engine,
+    autoflush=False,
+    expire_on_commit=False,
+)
 
 
 def get_db() -> Generator[Session, None, None]:
@@ -37,7 +45,7 @@ def get_db() -> Generator[Session, None, None]:
 
 
 def init_db() -> None:
-    # Imported here so that all models register with Base before table creation.
+    # Import models before creating database tables.
     import backend.db.models  # noqa: F401
 
     Base.metadata.create_all(bind=engine)
