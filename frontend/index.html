@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FoodRescue</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav-row">
+      <a href="#home" class="brand">
+        <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M4 20C4 11 10 5 20 4c0 10-6 16-15 16z" fill="#15803d"/>
+          <path d="M4 20l9-9" stroke="#f0fdf4" stroke-width="1.5" fill="none"/>
+        </svg>
+        FoodRescue
+      </a>
+      <button id="nav-toggle" class="hamburger" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="nav-links" class="nav-links" aria-label="Main">
+        <a href="#home" data-link="home">Home</a>
+        <a href="#donations" data-link="donations">Donations</a>
+        <a href="#dashboard" data-link="dashboard">Dashboard</a>
+        <a href="#impact" data-link="impact">Impact</a>
+        <a href="#safety" data-link="safety">Safety</a>
+      </nav>
+      <div class="auth-area">
+        <a href="#login" class="btn btn-primary btn-sm" id="btn-login-link">Login</a>
+        <a href="#register" class="btn btn-outline btn-sm" id="btn-register-link">Register</a>
+        <span id="user-name" class="user-name" hidden></span>
+        <button id="btn-logout" class="btn btn-outline btn-sm" type="button" hidden>Logout</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HOME -->
+    <section id="view-home" class="view" data-view="home">
+      <div class="hero">
+        <div class="container hero-grid">
+          <div>
+            <h1>Rescue good food. Feed people who need it.</h1>
+            <p class="lead">FoodRescue connects donors with surplus food to receivers in their zone, so meals reach people before they are wasted.</p>
+            <div class="hero-actions">
+              <a href="#donations" class="btn btn-primary">Browse donations</a>
+              <a href="#register" class="btn btn-light">Join FoodRescue</a>
+            </div>
+          </div>
+          <svg class="hero-art" viewBox="0 0 240 200" aria-hidden="true">
+            <ellipse cx="120" cy="170" rx="95" ry="12" fill="#14532d" opacity="0.25"/>
+            <path d="M30 110h180c0 42-40 66-90 66S30 152 30 110z" fill="#ffffff"/>
+            <path d="M30 110h180" stroke="#15803d" stroke-width="6"/>
+            <circle cx="80" cy="82" r="22" fill="#86efac"/>
+            <circle cx="120" cy="70" r="26" fill="#f97316"/>
+            <circle cx="160" cy="84" r="20" fill="#fde68a"/>
+            <path d="M120 44c-8-14 2-22 12-18-2 10-4 14-12 18z" fill="#15803d"/>
+            <path d="M60 60c-6-10 2-16 10-12-2 8-4 10-10 12z" fill="#15803d"/>
+          </svg>
+        </div>
+      </div>
+      <div class="container section">
+        <h2>How it works</h2>
+        <div class="grid-cards">
+          <div class="card"><h3>1. Donate</h3><p>Donors post surplus food with pickup windows and storage details.</p></div>
+          <div class="card"><h3>2. Match</h3><p>Receivers see scored matches based on zone, category and capacity.</p></div>
+          <div class="card"><h3>3. Deliver</h3><p>Claimed food is tracked through collection and delivery.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DONATIONS -->
+    <section id="view-donations" class="view container section" data-view="donations" hidden>
+      <h1>Available donations</h1>
+      <form id="filter-form" class="filters" role="search">
+        <label>Search <input id="search" type="search" placeholder="Search food name"></label>
+        <label>Category <select id="filter-category"><option value="">All categories</option></select></label>
+        <label>Zone <select id="filter-zone"><option value="">All zones</option></select></label>
+      </form>
+      <p id="donation-msg" class="muted">Loading…</p>
+      <div id="donation-grid" class="grid-cards"></div>
+    </section>
+
+    <!-- LOGIN -->
+    <section id="view-login" class="view container section narrow" data-view="login" hidden>
+      <h1>Login</h1>
+      <form id="login-form" class="card form">
+        <label>Name <input name="name" required autocomplete="username"></label>
+        <label>Password <input name="password" type="password" required autocomplete="current-password"></label>
+        <button class="btn btn-primary" type="submit">Login</button>
+        <p class="muted">No account? <a href="#register">Register</a></p>
+      </form>
+    </section>
+
+    <!-- REGISTER -->
+    <section id="view-register" class="view container section narrow" data-view="register" hidden>
+      <h1>Register</h1>
+      <form id="register-form" class="card form">
+        <fieldset class="role-toggle">
+          <legend>I am a</legend>
+          <label><input type="radio" name="role" value="donor" checked> Donor</label>
+          <label><input type="radio" name="role" value="receiver"> Receiver</label>
+        </fieldset>
+        <label>Name <input name="name" required minlength="3" autocomplete="username"></label>
+        <label>Password <input name="password" type="password" required minlength="8" autocomplete="new-password"></label>
+        <label>Zone <select name="zone_id" class="zone-select"></select></label>
+        <button class="btn btn-primary" type="submit">Create account</button>
+        <p class="muted">Already registered? <a href="#login">Login</a></p>
+      </form>
+    </section>
+
+    <!-- DASHBOARD -->
+    <section id="view-dashboard" class="view container section" data-view="dashboard" hidden>
+      <h1>Dashboard</h1>
+      <p id="dash-guest" class="muted" hidden>Please <a href="#login">login</a> to use your dashboard.</p>
+
+      <div id="dash-donor" hidden>
+        <h2>Post a donation</h2>
+        <form id="donation-form" class="card form form-grid">
+          <label>Food name <input name="food_name" required maxlength="120"></label>
+          <label>Category <input name="category" required maxlength="40" placeholder="e.g. cooked meals"></label>
+          <label>Quantity (kg) <input name="quantity_kg" type="number" step="0.1" min="0.1" required></label>
+          <label>Quantity (meals) <input name="quantity_meals" type="number" step="1" min="1" required></label>
+          <label>Prepared at <input name="prepared_at" type="datetime-local" required></label>
+          <label>Pickup by <input name="pickup_by" type="datetime-local" required></label>
+          <label>Storage
+            <select name="storage_type" required>
+              <option value="ambient">Ambient</option>
+              <option value="chilled">Chilled</option>
+              <option value="hot">Hot</option>
+              <option value="frozen">Frozen</option>
+            </select>
+          </label>
+          <label>Zone <select name="zone_id" class="zone-select" required></select></label>
+          <label>Allergens (comma separated) <input name="allergens" placeholder="e.g. nuts, dairy"></label>
+          <label class="span-all">Notes <textarea name="notes" maxlength="240" rows="2"></textarea></label>
+          <div class="span-all"><button class="btn btn-primary" type="submit">Post donation</button></div>
+        </form>
+
+        <h2>My donations</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Food</th><th>Category</th><th>Meals</th><th>Pickup by</th><th>Status</th></tr></thead>
+            <tbody id="mine-body"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div id="dash-receiver" hidden>
+        <h2>Matches for you</h2>
+        <p id="matches-msg" class="muted">Loading…</p>
+        <div id="matches-list" class="grid-cards"></div>
+
+        <h2>Claimed this session</h2>
+        <p class="muted">Update the status of food you claimed in this session.</p>
+        <div id="claimed-list" class="grid-cards"></div>
+      </div>
+    </section>
+
+    <!-- IMPACT -->
+    <section id="view-impact" class="view container section" data-view="impact" hidden>
+      <h1>Our impact</h1>
+      <div id="impact-stats" class="stat-grid"></div>
+    </section>
+
+    <!-- SAFETY -->
+    <section id="view-safety" class="view container section" data-view="safety" hidden>
+      <h1>Food safety</h1>
+      <div class="card">
+        <h3>Storage types</h3>
+        <ul id="storage-list" class="plain-list"></ul>
+      </div>
+      <div class="card">
+        <h3>Disclaimer</h3>
+        <p id="safety-text"></p>
+      </div>
+    </section>
+
+    <!-- ADMIN -->
+    <section id="view-admin" class="view container section" data-view="admin" hidden>
+      <h1>Admin overview</h1>
+      <p class="note">Note: the API has no admin login. This page shows public statistics only.</p>
+      <div id="admin-stats" class="stat-grid"></div>
+    </section>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <footer class="footer">
+    <div class="container">
+      <p id="disclaimer">FoodRescue · Always check food safety guidance before eating donated food.</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
